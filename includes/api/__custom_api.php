@@ -5,6 +5,7 @@
  */
 
  $includes = [
+  "maintenance",
   "metadata",
   "menu",
   "about",

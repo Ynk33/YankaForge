@@ -8,6 +8,7 @@ include("IThemeCustomizer.php");
  */
 
 $includes = [
+  "maintenance",
   "metadata",
   "about",
   "contact",
@@ -21,6 +22,7 @@ foreach ($includes as $include) {
 class Customizer implements IThemeCustomizer {
   
   public static function Customize( $wp_customize ) {
+    MaintenanceCustomizer::Customize( $wp_customize );
     MetadataCustomizer::Customize( $wp_customize );
     AboutCustomizer::Customize( $wp_customize );
     ContactCustomizer::Customize( $wp_customize );
