@@ -49,7 +49,7 @@ function sendContactMail(WP_REST_Request $request) {
   if (!empty($contactName) && !empty($contactEmail) && !empty($contactMessage)) {
 
     $result = wp_insert_comment([
-      "comment_author" => $contactName . " [ " . $siteName . " ]",
+      "comment_author" => " [" . $siteName . "] " . $contactName,
       "comment_author_email" => $contactEmail,
       "comment_content" => $contactMessage
     ]);
