@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Custom functions to expose the menu in the REST API.
+ * The API files to include.
  */
-
  $includes = [
   "maintenance",
+  "sections",
   "metadata",
   "menu",
   "about",
@@ -13,6 +13,9 @@
   "footer",
 ];
 
+/**
+ * Include the API files.
+ */
 foreach ($includes as $include) {
   include("api_" . $include . ".php");
 }

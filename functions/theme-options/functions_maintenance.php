@@ -14,7 +14,7 @@ class MaintenanceCustomizer implements IThemeCustomizer {
      * Section
      */
     $wp_customize->add_section(
-      'yanka_maintenance',
+      'yf_maintenance',
       [
         'title'				=> __('Maintenance', 'yankaforge'),
         'priority'		=> 0,
@@ -25,7 +25,7 @@ class MaintenanceCustomizer implements IThemeCustomizer {
 
     // Toggle
     $wp_customize->add_setting(
-      'yanka_maintenance_toggle',
+      'yf_maintenance_toggle',
       [
         'type'							=> 'theme_mod',
         'default'						=> false,
@@ -33,12 +33,12 @@ class MaintenanceCustomizer implements IThemeCustomizer {
       ]
     );
     $wp_customize->add_control(
-      'yanka_maintenance_toggle',
+      'yf_maintenance_toggle',
       [
         'type'			=> 'checkbox',
         'label'			=> __('Maintenance Mode', 'yankaforge'),
-        'section'		=> 'yanka_maintenance',
-        'settings'	=> 'yanka_maintenance_toggle',
+        'section'		=> 'yf_maintenance',
+        'settings'	=> 'yf_maintenance_toggle',
         'priority'	=> '0'
       ]
     );

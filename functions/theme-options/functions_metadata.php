@@ -6,7 +6,7 @@ class MetadataCustomizer implements IThemeCustomizer {
      * Section
     */
     $wp_customize->add_section(
-      'yanka_metadata',
+      'yf_metadata',
       [
         'title'      => __( 'Metadata', 'yankaforge' ),
         'priority'   => 40,
@@ -17,7 +17,7 @@ class MetadataCustomizer implements IThemeCustomizer {
 
     // Title
     $wp_customize->add_setting(
-      'yanka_metadata_title',
+      'yf_metadata_title',
       [
         'type'              => 'theme_mod',
         'default'           => __( 'My Website', 'yankaforge' ),
@@ -25,19 +25,19 @@ class MetadataCustomizer implements IThemeCustomizer {
       ]
     );
     $wp_customize->add_control(
-      'yanka_metadata_title',
+      'yf_metadata_title',
       [
         'type'     => 'text',
         'label'    => __( 'Title', 'yankaforge' ),
-        'section'  => 'yanka_metadata',
-        'settings' => 'yanka_metadata_title',
+        'section'  => 'yf_metadata',
+        'settings' => 'yf_metadata_title',
         'priority' => '0',
       ]
     );
 
     // Description
     $wp_customize->add_setting(
-      'yanka_metadata_description',
+      'yf_metadata_description',
       [
         'type'              => 'theme_mod',
         'default'           => __( 'Description of my Website', 'yankaforge' ),
@@ -45,19 +45,19 @@ class MetadataCustomizer implements IThemeCustomizer {
       ]
     );
     $wp_customize->add_control(
-      'yanka_metadata_description',
+      'yf_metadata_description',
       [
         'type'     => 'textarea',
         'label'    => __( 'Description', 'yankaforge' ),
-        'section'  => 'yanka_metadata',
-        'settings' => 'yanka_metadata_description',
+        'section'  => 'yf_metadata',
+        'settings' => 'yf_metadata_description',
         'priority' => '10',
       ]
     );
 
     // Image
     $wp_customize->add_setting(
-      'yanka_metadata_image',
+      'yf_metadata_image',
       [
         'type'							=> 'theme_mod',
         'default'						=> '',
@@ -67,13 +67,13 @@ class MetadataCustomizer implements IThemeCustomizer {
     $wp_customize->add_control(
       new WP_Customize_Media_Control(
         $wp_customize,
-        'yanka_metadata_image',
+        'yf_metadata_image',
         [
           'mime_type' 	=> 'image',
           'label'      	=> __( 'OpenGraph Image', 'yankaforge' ),
-          'description' => __('Image displayed in search engines and shared content on social networks.', 'intentionnaly-blank'),
-          'section'    	=> 'yanka_metadata',
-          'settings'   	=> 'yanka_metadata_image',
+          'description' => __('Image displayed in search engines and shared content on social networks.', 'yankaforge'),
+          'section'    	=> 'yf_metadata',
+          'settings'   	=> 'yf_metadata_image',
         ],
       ),
     );

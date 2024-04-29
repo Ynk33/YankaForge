@@ -4,7 +4,7 @@
 /**
  * Includes
  */
-include("utils.php");
+include("functions/utils.php");
 include("functions/theme-options/_customizer.php");
 
 

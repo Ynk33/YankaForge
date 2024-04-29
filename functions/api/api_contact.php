@@ -3,7 +3,7 @@
 add_action( 'rest_api_init', function() {
   register_rest_route( 'custom', '/contact/', [
     'methods' => 'GET',
-    'callback' => 'wp_contact_route',
+    'callback' => 'yf_contact_route',
   ]);
 });
 
@@ -14,18 +14,18 @@ add_action('rest_api_init', function () {
   ]);
 });
 
-function wp_contact_route() {
+function yf_contact_route() {
 
-  $pictureId = get_theme_mod( "yanka_contact_picture" );
+  $pictureId = get_theme_mod( "yf_contact_picture" );
   $picture = getPicture($pictureId);
 
   $contact = [
-    "headline"      => get_theme_mod( "yanka_contact_headline" ),
-    "content"       => get_theme_mod("yanka_contact_content"),
+    "headline"      => get_theme_mod( "yf_contact_headline" ),
+    "content"       => get_theme_mod("yf_contact_content"),
     "picture"       => $picture,
     "social_media"  => [
-      "headline"    => get_theme_mod( "yanka_contact_social_headline" ),
-      "instagram"   => get_theme_mod( "yanka_contact_instagram" ),
+      "headline"    => get_theme_mod( "yf_contact_social_headline" ),
+      "instagram"   => get_theme_mod( "yf_contact_instagram" ),
     ]
   ];
   return $contact;

@@ -6,7 +6,7 @@ class FooterCustomizer implements IThemeCustomizer {
      * Section
     */
     $wp_customize->add_section(
-      'yanka_footer',
+      'yf_footer',
       [
         'title'      => __( 'Footer', 'yankaforge' ),
         'priority'   => 120,
@@ -17,7 +17,7 @@ class FooterCustomizer implements IThemeCustomizer {
 
     // Content
     $wp_customize->add_setting(
-      'yanka_footer_content',
+      'yf_footer_content',
       [
         'type'              => 'theme_mod',
         'default'           => __( 'YankaForge - Proudly powered by WordPress', 'yankaforge' ),
@@ -25,12 +25,12 @@ class FooterCustomizer implements IThemeCustomizer {
       ]
     );
     $wp_customize->add_control(
-      'yanka_footer_content',
+      'yf_footer_content',
       [
         'type'     => 'textarea',
         'label'    => __( 'Content Text', 'yankaforge' ),
-        'section'  => 'yanka_footer',
-        'settings' => 'yanka_footer_content',
+        'section'  => 'yf_footer',
+        'settings' => 'yf_footer_content',
         'priority' => '10',
       ]
     );
