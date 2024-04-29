@@ -2,9 +2,10 @@
 
 
 /**
- * Includes customizer
+ * Includes
  */
-include("includes/theme-options/__customizer.php");
+include("utils.php");
+include("functions/theme-options/_customizer.php");
 
 
 /**
@@ -46,4 +47,4 @@ add_action( 'customize_register', 'yanka_customize_register', 100 );
 /**
  * Includes custom api
  */
-include("includes/api/__custom_api.php");
+include("functions/api/_api.php");

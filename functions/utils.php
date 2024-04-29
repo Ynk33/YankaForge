@@ -1,6 +1,6 @@
 <?php
 
-function getPictureDetails(int $pictureId) {
+function getPicture(int $pictureId) {
   
   $pictureTitle = get_the_title($pictureId);
   $pictureUrl = wp_get_attachment_image_url($pictureId, "full");

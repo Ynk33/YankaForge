@@ -10,12 +10,12 @@ add_action( 'rest_api_init', function() {
 function wp_metadata_route() {
   
   $pictureId = get_theme_mod( "yanka_metadata_image" );
-  $pictureDetails = getPictureDetails($pictureId);
+  $picture = getPicture($pictureId);
 
   $metadata = [
     "title"       => get_theme_mod( "yanka_metadata_title" ),
     "description" => get_theme_mod("yanka_metadata_description"),
-    "image"       => $pictureDetails,
+    "image"       => $picture,
   ];
 
   return $metadata;

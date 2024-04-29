@@ -17,12 +17,12 @@ add_action('rest_api_init', function () {
 function wp_contact_route() {
 
   $pictureId = get_theme_mod( "yanka_contact_picture" );
-  $pictureDetails = getPictureDetails($pictureId);
+  $picture = getPicture($pictureId);
 
   $contact = [
     "headline"      => get_theme_mod( "yanka_contact_headline" ),
     "content"       => get_theme_mod("yanka_contact_content"),
-    "picture"       => $pictureDetails,
+    "picture"       => $picture,
     "social_media"  => [
       "headline"    => get_theme_mod( "yanka_contact_social_headline" ),
       "instagram"   => get_theme_mod( "yanka_contact_instagram" ),

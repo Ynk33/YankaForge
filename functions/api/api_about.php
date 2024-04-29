@@ -10,17 +10,17 @@ add_action( 'rest_api_init', function() {
 function wp_about_route() {
 
   $pictureId = get_theme_mod("yanka_about_picture");
-  $pictureDetails = getPictureDetails($pictureId);
+  $picture = getPicture($pictureId);
 
   $backgroundId = get_theme_mod( "yanka_about_background" );
-  $backgroundDetails = getPictureDetails($backgroundId);
+  $background = getPicture($backgroundId);
 
   $about = [
     "headline"          => get_theme_mod( "yanka_about_headline" ),
     "subtitle"          => get_theme_mod( "yanka_about_subtitle" ),
     "content"           => get_theme_mod("yanka_about_content"),
-    "picture"           => $pictureDetails,
-    "background"        => $backgroundDetails,
+    "picture"           => $picture,
+    "background"        => $background,
   ];
   return $about;
 }

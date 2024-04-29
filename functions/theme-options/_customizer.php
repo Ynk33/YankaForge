@@ -1,6 +1,5 @@
 <?php
 
-include("utils.php");
 include("IThemeCustomizer.php");
 
 /**
