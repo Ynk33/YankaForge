@@ -1,11 +1,10 @@
 <?php
 
-
 /**
  * Includes
  */
 include("functions/utils.php");
-include("functions/theme-options/_customizer.php");
+include("functions/data/sections.php");
 
 
 /**
@@ -36,10 +35,12 @@ add_action( 'after_setup_theme', 'yanka_setup' );
  * @param class $wp_customize Customizer object.
  */
 function yanka_customize_register( $wp_customize ) {
+
 	$wp_customize->remove_section( 'static_front_page' );
 	$wp_customize->remove_panel( 'nav_menus' );
 	$wp_customize->remove_section( 'custom_css' );
 
+	include("functions/theme-options/_customizer.php");
 	Customizer::Customize( $wp_customize );
 }
 add_action( 'customize_register', 'yanka_customize_register', 100 );

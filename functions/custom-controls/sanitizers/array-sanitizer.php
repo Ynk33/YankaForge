@@ -6,7 +6,7 @@
  * @param string $values Values.
  * @return array Checked values.
  */
-function sanitize_multiple_checkbox( $values ) {
+function sanitize_array( $values ) {
 
 	$multi_values = ! is_array( $values ) ? explode( ',', $values ) : $values;
 

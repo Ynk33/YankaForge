@@ -4,14 +4,15 @@
  * Defines the custom controls to include.
  */
 $customControls = [
-  "multiple-checkbox-control"
+  "custom-control", // Base class
+  "sortable-list-control"
 ];
 
 /**
  * Defines the custom sanitizers to include.
  */
 $customSanitizers = [
-  "multiple-checkbox-control-sanitizer"
+  "array-sanitizer"
 ];
 
 /**

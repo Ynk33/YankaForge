@@ -15,35 +15,29 @@ class SectionsCustomizer implements IThemeCustomizer {
       ]
     );
 
-    // Sections selection
+    // Section selection
     $wp_customize->add_setting(
       'yf_sections_selection',
       [
         'type'							=> 'theme_mod',
-        'default'						=> [ "highlights", "galleries", "about", "contact" ],
-        'sanitize_callback'	=> 'sanitize_multiple_checkbox',
-        'transport'         => 'postMessage',
+        'default'						=> Sections::DEFAULT,
+        'sanitize_callback'	=> 'sanitize_array',
       ]
     );
-    $wp_customize->add_control(
-      new YF_Multiple_Checkbox_Control(
-        $wp_customize, 
-        'yf_sections_selection',
-        [
-          'label'      	=> __( 'Sections selection', 'yankaforge' ),
-          'description' => __('Sections you want to show in your website.', 'yankaforge'),
-          'choices'     => [
-            "highlights"  => __("Highlights"),
-            "galleries"   => __("Galleries"),
-            "about"       => __("About"),
-            "contact"     => __("Contact"),
-          ],
-          'section'		  => 'yf_sections',
-          'settings'	  => 'yf_sections_selection',
+
+    $wp_customize->add_control( new YF_Sortable_List_Control(
+      $wp_customize,
+      'yf_sections_selection',
+      [
+        'label'         => __( 'Sections selection' ),
+        'description'   => esc_html__( 'Select the sections in the order you want in your website.', 'yankaforge' ),
+        'choices'       => Sections::SECTIONS,
+        'section'       => 'yf_sections',
+        'settings'      => 'yf_sections_selection',
+        'button_labels' => [
+          'add' => __( 'Add Section' ),
         ]
-      )
-    );
-
-
+      ]
+    ));
   }
 }
