@@ -11,7 +11,5 @@ function yf_sections_route() {
   
   $sections = get_theme_mod( "yf_sections_selection" );
 
-  return [
-    'sections' => $sections
-  ];
+  return $sections;
 }
