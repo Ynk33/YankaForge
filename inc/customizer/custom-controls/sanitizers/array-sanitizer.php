@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Sanitize the Multiple checkbox values.
+ * Sanitize an array of strings.
  *
  * @param string $values Values.
  * @return array Checked values.

@@ -22,8 +22,8 @@ class YF_Custom_Control extends WP_Customize_Control {
     /**
      * Sets up the paths.
      */
-    $this->jsPath = trailingslashit( get_template_directory_uri() ) . 'functions/custom-controls/js/customize-controls.js';
-    $this->cssPath = trailingslashit( get_template_directory_uri() ) . 'functions/custom-controls/css/customize-controls.css';
+    $this->jsPath = trailingslashit( get_template_directory_uri() ) . 'inc/customizer/custom-controls/js/customize-controls.js';
+    $this->cssPath = trailingslashit( get_template_directory_uri() ) . 'inc/customizer/custom-controls/css/customize-controls.css';
   }
 
   /**

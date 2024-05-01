@@ -1,7 +1,7 @@
 <?php
 
 class MetadataCustomizer implements IThemeCustomizer {
-  public static function Customize( $wp_customize ) {
+  public static function Customize( $wp_customize, $priority = -1 ) {
     /** 
      * Section
     */
@@ -9,9 +9,10 @@ class MetadataCustomizer implements IThemeCustomizer {
       'yf_metadata',
       [
         'title'      => __( 'Metadata', 'yankaforge' ),
-        'priority'   => 40,
+        'description'=> __( 'These informations will be shown in search engines and shared content on social media.', 'yankaforge' ),
+        'priority'   => $priority,
         'capability' => 'edit_theme_options',
-        'panel'      => '',
+        'panel'      => 'yf_panel_options',
       ]
     );
 
@@ -20,7 +21,7 @@ class MetadataCustomizer implements IThemeCustomizer {
       'yf_metadata_title',
       [
         'type'              => 'theme_mod',
-        'default'           => __( 'My Website', 'yankaforge' ),
+        'default'           => bloginfo('name'),
         'sanitize_callback' => 'wp_kses_post',
       ]
     );
@@ -40,7 +41,7 @@ class MetadataCustomizer implements IThemeCustomizer {
       'yf_metadata_description',
       [
         'type'              => 'theme_mod',
-        'default'           => __( 'Description of my Website', 'yankaforge' ),
+        'default'           => bloginfo('description'),
         'sanitize_callback' => 'wp_kses_post',
       ]
     );

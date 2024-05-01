@@ -1,11 +1,7 @@
 jQuery(document).ready(function () {
     
-    /**
+	/**
 	 * Sortable list Custom Control
-	 *
-	 * @author Anthony Hortin <http://maddisondesigns.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.html
-	 * @link https://github.com/maddisondesigns
 	 */
 
 	// Update the values for all our input fields and initialise the sortable list

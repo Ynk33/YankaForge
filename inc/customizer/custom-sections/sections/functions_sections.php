@@ -1,7 +1,7 @@
 <?php
 
 class SectionsCustomizer implements IThemeCustomizer {
-  public static function Customize( $wp_customize ) {
+  public static function Customize( $wp_customize, $priority = -1 ) {
     /**
      * Section
      */
@@ -9,9 +9,10 @@ class SectionsCustomizer implements IThemeCustomizer {
       "yf_sections",
       [
         'title'				=> __('Sections', 'yankaforge'),
-        'priority'		=> 1,
+        'description' => __('Here you are able to decide which sections will be visible in your website and in which order.', 'yankaforge'),
+        'priority'		=> $priority,
         'capability'	=> 'edit_theme_options',
-        'panel'				=> '',
+        'panel'				=> 'yf_panel_options',
       ]
     );
 

@@ -1,7 +1,7 @@
 <?php
 
 class FooterCustomizer implements IThemeCustomizer {
-  public static function Customize( $wp_customize ) {
+  public static function Customize( $wp_customize, $priority = -1 ) {
     /**
      * Section
     */
@@ -9,9 +9,10 @@ class FooterCustomizer implements IThemeCustomizer {
       'yf_footer',
       [
         'title'      => __( 'Footer', 'yankaforge' ),
-        'priority'   => 120,
+        'description' => __('This is the content of the Footer, at the bottom of your website.', 'yankaforge'),
+        'priority'   => $priority,
         'capability' => 'edit_theme_options',
-        'panel'      => '',
+        'panel'      => 'yf_panel_content',
       ]
     );
 
@@ -28,7 +29,7 @@ class FooterCustomizer implements IThemeCustomizer {
       'yf_footer_content',
       [
         'type'     => 'textarea',
-        'label'    => __( 'Content Text', 'yankaforge' ),
+        'label'    => __( 'Content', 'yankaforge' ),
         'section'  => 'yf_footer',
         'settings' => 'yf_footer_content',
         'priority' => '10',

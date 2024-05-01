@@ -1,7 +1,7 @@
 <?php
 
 class ContactCustomizer implements IThemeCustomizer {
-  public static function Customize( $wp_customize ) {
+  public static function Customize( $wp_customize, $priority = -1 ) {
     /**
      * Section
      */
@@ -9,9 +9,10 @@ class ContactCustomizer implements IThemeCustomizer {
       'yf_contact',
       [
         'title'				=> __('Contact', 'yankaforge'),
-        'priority'		=> 100,
+        'description' => __('This is the content of the Contact section.', 'yankaforge'),
+        'priority'		=> $priority,
         'capability'	=> 'edit_theme_options',
-        'panel'				=> '',
+        'panel'				=> 'yf_panel_content',
       ]
     );
 
@@ -28,7 +29,7 @@ class ContactCustomizer implements IThemeCustomizer {
       'yf_contact_headline',
       [
         'type'			=> 'textarea',
-        'label'			=> __('Content', 'yankaforge'),
+        'label'			=> __('Headline', 'yankaforge'),
         'section'		=> 'yf_contact',
         'settings'	=> 'yf_contact_headline',
         'priority'	=> '10'
@@ -70,7 +71,7 @@ class ContactCustomizer implements IThemeCustomizer {
         'yf_contact_picture',
         [
           'mime_type' 	=> 'image',
-          'label'      	=> __( 'Contact picture', 'yankaforge' ),
+          'label'      	=> __( 'Background Picture', 'yankaforge' ),
           'description' => __('Picture displayed in the Contact section.', 'yankaforge'),
           'section'    	=> 'yf_contact',
           'settings'   	=> 'yf_contact_picture',
@@ -91,7 +92,7 @@ class ContactCustomizer implements IThemeCustomizer {
       'yf_contact_social_headline',
       [
         'type'			=> 'text',
-        'label'			=> __('Headline', 'yankaforge'),
+        'label'			=> __('Social media caption', 'yankaforge'),
         'section'		=> 'yf_contact',
         'settings'	=> 'yf_contact_social_headline',
         'priority'	=> '10'

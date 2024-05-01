@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Fetch a picture details.
+ */
 function getPicture(int $pictureId) {
   
   $pictureTitle = get_the_title($pictureId);

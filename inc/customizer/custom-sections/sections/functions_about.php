@@ -1,7 +1,7 @@
 <?php
 
 class AboutCustomizer implements IThemeCustomizer {
-  public static function Customize( $wp_customize ) {
+  public static function Customize( $wp_customize, $priority = -1 ) {
     /**
      * Section
      */
@@ -9,9 +9,10 @@ class AboutCustomizer implements IThemeCustomizer {
       'yf_about',
       [
         'title'				=> __('About', 'yankaforge'),
-        'priority'		=> 50,
+        'description' => __('This is the content of the About section.', 'yankaforge'),
+        'priority'		=> $priority,
         'capability'	=> 'edit_theme_options',
-        'panel'				=> '',
+        'panel'				=> 'yf_panel_content',
       ]
     );
 
@@ -28,7 +29,7 @@ class AboutCustomizer implements IThemeCustomizer {
       'yf_about_headline',
       [
         'type'			=> 'textarea',
-        'label'			=> __('Content', 'yankaforge'),
+        'label'			=> __('Headline', 'yankaforge'),
         'section'		=> 'yf_about',
         'settings'	=> 'yf_about_headline',
         'priority'	=> '10'
@@ -48,7 +49,7 @@ class AboutCustomizer implements IThemeCustomizer {
       'yf_about_subtitle',
       [
         'type'			=> 'textarea',
-        'label'			=> __('Content', 'yankaforge'),
+        'label'			=> __('Caption', 'yankaforge'),
         'section'		=> 'yf_about',
         'settings'	=> 'yf_about_subtitle',
         'priority'	=> '10'

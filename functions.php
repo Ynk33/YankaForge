@@ -1,51 +1,35 @@
 <?php
 
 /**
- * Includes
- */
-include("functions/utils.php");
-include("functions/data/sections.php");
-
-
-/**
  * YankaForge Theme functions
  *
  * @package WordPress
  * @subpackage yankaforge
+ * @author Yannick Tirand
+ * @link https://github.com/Ynk33/YankaForge
  */
 
-if ( ! function_exists( 'yanka_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers the various WordPress features that
-	 * this theme supports.
-	 */
-	function yanka_setup() {
-		load_theme_textdomain( 'yankaforge' );
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails' );
-	}
-endif; // end function_exists yanka_setup.
+/**
+ * Includes global utils.
+ */
+include("inc/utils.php");
+include("inc/customizer/data/sections.php");
+
+/**
+ * Sets up theme defaults and registers the various WordPress features that this theme supports.
+ */
+// TODO: check on those theme supports, if they are needed.
+function yanka_setup() {
+	load_theme_textdomain( 'yankaforge' );
+}
 add_action( 'after_setup_theme', 'yanka_setup' );
 
 /**
- * Sets up theme defaults and registers the various WordPress features that
- * this theme supports.
-
- * @param class $wp_customize Customizer object.
+ * Includes the theme customize options.
  */
-function yanka_customize_register( $wp_customize ) {
-
-	$wp_customize->remove_section( 'static_front_page' );
-	$wp_customize->remove_panel( 'nav_menus' );
-	$wp_customize->remove_section( 'custom_css' );
-
-	include("functions/theme-options/_customizer.php");
-	Customizer::Customize( $wp_customize );
-}
-add_action( 'customize_register', 'yanka_customize_register', 100 );
+include("inc/customizer/index.php");
 
 /**
- * Includes custom api
+ * Includes custom API.
  */
-include("functions/api/_api.php");
+include("inc/api/index.php");
