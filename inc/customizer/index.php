@@ -15,5 +15,6 @@ function yanka_customize_register( $wp_customize ) {
 
 	// Add the theme's customizer.
 	YF_Customizer::Customize( $wp_customize );
+	$wp_customize->remove_control( 'site_icon');
 }
 add_action( 'customize_register', 'yanka_customize_register', 100 );
