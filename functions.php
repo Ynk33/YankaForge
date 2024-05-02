@@ -18,11 +18,16 @@ include("inc/customizer/data/sections.php");
 /**
  * Sets up theme defaults and registers the various WordPress features that this theme supports.
  */
-// TODO: check on those theme supports, if they are needed.
 function yanka_setup() {
 	load_theme_textdomain( 'yankaforge' );
 }
 add_action( 'after_setup_theme', 'yanka_setup' );
+
+/**
+ * Allow 'Editor' to modify theme options.
+ */
+$editor = get_role('editor');
+$editor->add_cap('edit_theme_options');
 
 /**
  * Includes the theme customize options.
