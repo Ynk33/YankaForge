@@ -21,7 +21,7 @@ class MetadataCustomizer implements IThemeCustomizer {
       'yf_metadata_title',
       [
         'type'              => 'theme_mod',
-        'default'           => bloginfo('name'),
+        'default'           => get_bloginfo('name'),
         'sanitize_callback' => 'wp_kses_post',
       ]
     );
@@ -41,7 +41,7 @@ class MetadataCustomizer implements IThemeCustomizer {
       'yf_metadata_description',
       [
         'type'              => 'theme_mod',
-        'default'           => bloginfo('description'),
+        'default'           => get_bloginfo('description'),
         'sanitize_callback' => 'wp_kses_post',
       ]
     );
